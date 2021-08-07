@@ -10,7 +10,7 @@
 # Install the Examples
 
 You have to install the GdUnit3 plugin and open the tools over the GdUnit3Inspector
-![image](https://github.com/MikeSchulze/gdUnit3/wiki/images/Install-AssetLib.png)
+![image](Install-Examples.png)
 
 You are welcome to report bugs or create new feature requests.
 I would also appreciate feedback.
