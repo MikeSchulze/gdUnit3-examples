@@ -5,7 +5,7 @@
 ![Godot v3.3](https://img.shields.io/badge/Godot-v3.3-%23478cbf?logo=godot-engine&logoColor=white)
 ![Godot v3.3.1](https://img.shields.io/badge/Godot-v3.3.1-%23478cbf?logo=godot-engine&logoColor=white)
 ![Godot v3.3.2](https://img.shields.io/badge/Godot-v3.3.2-%23478cbf?logo=godot-engine&logoColor=white)
-![GdUnit3 Unit Test Framework](.//addons/gdUnit3/GdUnit3Banner.png)
+![GdUnit3 Unit Test Framework](https://github.com/MikeSchulze/gdUnit3/blob/master/addons/gdUnit3/GdUnit3Banner.png)
 
 # Install the Examples
 
