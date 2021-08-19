@@ -1,4 +1,6 @@
 # GdUnit generated TestSuite
+#warning-ignore-all:unused_argument
+#warning-ignore-all:return_value_discarded
 class_name RoomWithDoorTest
 extends GdUnitTestSuite
 

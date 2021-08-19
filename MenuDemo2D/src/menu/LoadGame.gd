@@ -1,3 +1,4 @@
+# warning-ignore-all:unused_signal
 extends MenuDialog
 
 signal load_game

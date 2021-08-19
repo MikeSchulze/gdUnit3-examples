@@ -1,4 +1,5 @@
 # GdUnit generated TestSuite
+#warning-ignore-all:return_value_discarded
 class_name ExampleMockWithSignalTest
 extends GdUnitTestSuite
 

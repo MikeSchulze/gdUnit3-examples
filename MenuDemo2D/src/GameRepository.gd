@@ -1,6 +1,6 @@
 # a fake repositors to hold save game stands
 # is it a singelton class like autoload
-# warning-ignore:unused_signal
+# warning-ignore-all:unused_signal
 class_name GameRepository
 extends Reference
 
