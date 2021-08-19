@@ -11,7 +11,6 @@
 [ext_resource path="res://gdUnit3-examples/MenuDemo2D/assets/menu/exit_clear_hovered.png" type="Texture" id=9]
 [ext_resource path="res://gdUnit3-examples/MenuDemo2D/assets/menu/buttonStock-hover.png" type="Texture" id=10]
 
-
 [node name="Options" type="Control"]
 anchor_left = 0.5
 anchor_top = 0.5

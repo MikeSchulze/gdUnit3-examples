@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://gdUnit3-examples/MenuDemo2D/src/menu/new_shortcut.tres" type="ShortCut" id=1]
 [ext_resource path="res://gdUnit3-examples/MenuDemo2D/assets/menu/background.jpg" type="Texture" id=2]
@@ -11,11 +11,6 @@
 [ext_resource path="res://gdUnit3-examples/MenuDemo2D/assets/menu/buttonStock-d.png" type="Texture" id=11]
 [ext_resource path="res://gdUnit3-examples/MenuDemo2D/assets/menu/buttonStock-disabled.png" type="Texture" id=12]
 [ext_resource path="res://gdUnit3-examples/MenuDemo2D/assets/menu/buttonStock-hover.png" type="Texture" id=13]
-
-
-[sub_resource type="StreamTexture" id=1]
-flags = 4
-load_path = "res://.import/exit_clear_hovered.png-3f1f911cc1254dd113cbc3924aa3bf6d.stex"
 
 [node name="GameMenu" type="Panel"]
 anchor_left = 0.5
@@ -62,7 +57,6 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 7 )
-texture_hover = SubResource( 1 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
