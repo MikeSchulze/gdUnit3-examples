@@ -66,6 +66,14 @@ func test_simulate_until_signal(timeout = 2000) -> void:
 	assert_int(_door.state()).is_equal(Door.STATE.CLOSE)
 	verify(_scene, 1)._on_door_door_closed(any())
 
+# this test runs the inital scene, and waits for the door close signal to stop the simulate
+# additional we set the maximum test execution  timeout to 2s to abort at least after 2s
+func test_simulate_until_object_signal(timeout = 2000) -> void:
+	# run the scene until  the signal 'door_closed' is emited
+	yield(_runner.simulate_until_object_signal(_door, "door_closed"), "completed")
+	# verify the door is closed
+	assert_int(_door.state()).is_equal(Door.STATE.CLOSE)
+
 # this test moves the play in the door trigger arera to trigger an door open
 func test_simulate_trigger_open_door(timeout = 5000) -> void:
 	# wait until the door is closed
