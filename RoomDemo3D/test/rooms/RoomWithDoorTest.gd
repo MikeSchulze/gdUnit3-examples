@@ -100,8 +100,9 @@ func test_simulate_process_pyhysics() -> void:
 	var sponge = _scene.find_node("sponge")
 	# the sponge is falling down
 	assert_bool(sponge.is_sleeping()).is_false()
-	# run 500 frames, time enough to bring the sponge down to the floor
-	yield(_runner.simulate_frames(500), "completed")
+	
+	# await until the sponge is sleeping 
+	yield(_runner.await_func_on(sponge, "is_sleeping").is_true(), "completed")
 	
 	# the sponge should now be stay on the floor
 	assert_bool(sponge.is_sleeping()).is_true()
