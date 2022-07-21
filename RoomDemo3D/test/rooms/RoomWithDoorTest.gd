@@ -32,13 +32,13 @@ func before_test() -> void:
 # this test shows the inital scene, the door is open and auto closed on startup
 func test_simulate_scene_by_frames_and_delta() -> void:
 	# run the scene for 10 frames each frame with a delta of 10ms
-	yield(_runner.simulate(10, .010), "completed")
+	yield(_runner.simulate_frames(10, 10), "completed")
 	# the door is not closed yet, it is sill in closing animation
 	assert_int(_door.state()).is_equal(Door.STATE.START_CLOSE)
 	verify(_scene, 0)._on_door_door_closed(any())
 	
 	# run next 50 frames, the door should be closed after 50 frames
-	yield(_runner.simulate(50, .010), "completed")
+	yield(_runner.simulate_frames(50, 100), "completed")
 	# verify the door is closed by the `_on_door_door_closed` is called
 	assert_int(_door.state()).is_equal(Door.STATE.CLOSE)
 	verify(_scene, 1)._on_door_door_closed(any())
@@ -52,7 +52,7 @@ func test_simulate_scene_by_frames_with_time_shift() -> void:
 	verify(_scene, 0)._on_door_door_closed(any())
 	
 	# run next 50 frames
-	yield(_runner.simulate_frames(50), "completed")
+	yield(_runner.simulate_frames(200), "completed")
 	# verify the door is closed by the `_on_door_door_closed` is called
 	assert_int(_door.state()).is_equal(Door.STATE.CLOSE)
 	verify(_scene, 1)._on_door_door_closed(any())
