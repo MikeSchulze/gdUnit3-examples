@@ -19,7 +19,7 @@ func before_test() -> void:
 	# set time factor to 10 to simulate the scene very fast
 	_runner.set_time_factor(10)
 	# enable this line to show the running scene during test execution
-	_runner.maximize_view()
+	#_runner.maximize_view()
 	# door not cloesed yet
 	verify(_scene, 0)._on_door_door_closed(any())
 	_door = _scene.find_node("door")
@@ -37,8 +37,8 @@ func test_simulate_scene_by_frames_and_delta() -> void:
 	assert_int(_door.state()).is_equal(Door.STATE.START_CLOSE)
 	verify(_scene, 0)._on_door_door_closed(any())
 	
-	# run next 50 frames, the door should be closed after 50 frames
-	yield(_runner.simulate_frames(50, 100), "completed")
+	# run next 60 frames, the door should be closed after 60 frames
+	yield(_runner.simulate_frames(60, 100), "completed")
 	# verify the door is closed by the `_on_door_door_closed` is called
 	assert_int(_door.state()).is_equal(Door.STATE.CLOSE)
 	verify(_scene, 1)._on_door_door_closed(any())

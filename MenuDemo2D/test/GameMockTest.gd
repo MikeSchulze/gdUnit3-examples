@@ -26,11 +26,14 @@ func test_game_menu_open_close():
 	
 	# first esc press to open the main menu
 	scene_runner.simulate_key_pressed(KEY_ESCAPE)
+	yield(await_idle_frame(), "completed")
+	#yield(scene_runner.simulate_frames(10), "completed")
 	verify(scene)._on_game_paused(true)
 	assert_str(scene._state_label.text).is_equal("Game Paused")
 	
 	# press esc again to close the game menu
 	scene_runner.simulate_key_pressed(KEY_ESCAPE)
+	yield(await_idle_frame(), "completed")
 	verify(scene)._on_game_paused(false)
 	assert_str(scene._state_label.text).is_equal("Game Running")
 
@@ -40,7 +43,7 @@ func test_game_menu_new_game_esc():
 	
 	# simulate esc pressed to open the main menu
 	scene_runner.simulate_key_pressed(KEY_ESCAPE)
-	yield(get_tree(), "idle_frame")
+	yield(await_idle_frame(), "completed")
 	
 	# game should be paused
 	assert_str(scene._state_label.text).is_equal("Game Paused")
@@ -50,19 +53,19 @@ func test_game_menu_new_game_esc():
 	
 	# press enter to open create new game menu
 	scene_runner.simulate_key_pressed(KEY_ENTER)
-	yield(get_tree(), "idle_frame")
+	yield(await_idle_frame(), "completed")
 	if _debug_wait:
 		yield(get_tree().create_timer(1), "timeout")
 
 	# press esc to exit new game menu
 	scene_runner.simulate_key_pressed(KEY_ESCAPE)
-	yield(get_tree(), "idle_frame")
+	yield(await_idle_frame(), "completed")
 	if _debug_wait:
 		yield(get_tree().create_timer(1), "timeout")
 	
 	# press esc back to game
 	scene_runner.simulate_key_pressed(KEY_ESCAPE)
-	yield(get_tree(), "idle_frame")
+	yield(await_idle_frame(), "completed")
 	if _debug_wait:
 		yield(get_tree().create_timer(1), "timeout")
 	
@@ -76,7 +79,7 @@ func test_game_menu_new_game_press_new():
 	
 	# simulate esc pressed to open the main menu
 	scene_runner.simulate_key_pressed(KEY_ESCAPE)
-	yield(get_tree(), "idle_frame")
+	yield(await_idle_frame(), "completed")
 	
 	# game should be paused
 	assert_str(scene._state_label.text).is_equal("Game Paused")
@@ -86,13 +89,13 @@ func test_game_menu_new_game_press_new():
 	
 	# press enter to open create new game menu
 	scene_runner.simulate_key_pressed(KEY_ENTER)
-	yield(get_tree(), "idle_frame")
+	yield(await_idle_frame(), "completed")
 	if _debug_wait:
 		yield(get_tree().create_timer(1), "timeout")
 
 	# press again enter to  create a new game
 	scene_runner.simulate_key_pressed(KEY_ENTER)
-	yield(get_tree(), "idle_frame")
+	yield(await_idle_frame(), "completed")
 	if _debug_wait:
 		yield(get_tree().create_timer(1), "timeout")
 	

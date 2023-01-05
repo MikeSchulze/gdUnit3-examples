@@ -11,7 +11,7 @@ onready var _main_scene = $MainScene
 var _game_repository := GameRepository.instance()
 
 func _ready():
-	OS.window_maximized = true
+	#OS.window_maximized = true
 	_label.text = "App started"
 	_state_label.text = "Game Init"
 	_state_bar.color = Color.darkgoldenrod
@@ -23,14 +23,7 @@ func _ready():
 func _unhandled_input(event :InputEvent):
 	var _debug = false
 	if _debug and event is InputEventKey:
-		prints("---------------------")
-		prints(event, event.as_text())
-		var key_event :InputEventKey = event
-		prints("code", key_event.scancode)
-		prints("command", key_event.command)
-		prints("echo", key_event.echo)
-		prints("pressed", key_event.pressed)
-		prints("---------------------")
+		prints(event, event.as_text(), event.pressed)
 	
 	if event.is_action_released("ui_cancel"):
 		_ui.open_menu()
