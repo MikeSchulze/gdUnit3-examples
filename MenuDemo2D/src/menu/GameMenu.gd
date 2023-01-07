@@ -80,5 +80,7 @@ func _on_focus_entered():
 
 func _on_focus_exited():
 	if _last_focus:
-		_last_focus.find_node("Label").add_color_override("font_color", Color.white)
+		var label := _last_focus.find_node("Label")
+		if label:
+			label.add_color_override("font_color", Color.white)
 		_last_focus.rect_scale.x = 1
